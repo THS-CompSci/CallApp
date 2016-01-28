@@ -1,14 +1,5 @@
 package com.callio.callapp;
 
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
-
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -31,7 +22,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE reminders(_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, date TEXT, description TEXT, location TEXT, alarm_name TEXT, active INTEGER, user_id INTEGER );");
         db.execSQL("CREATE TABLE messages(_id INTEGER PRIMARY KEY AUTOINCREMENT, sender TEXT, reciever TEXT, message TEXT, send_time TEXT, recieve_time TEXT, read_time TEXT,  );");
     }
-
+        //This is a change
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
