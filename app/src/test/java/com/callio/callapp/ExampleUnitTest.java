@@ -1,4 +1,4 @@
-package com.callio.callapp;
+package com.callio.com;
 
 import org.junit.Test;
 

@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="jet.callio.com.DatabaseConnection">
+    tools:context="io.damen.calendar.event_create">
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"

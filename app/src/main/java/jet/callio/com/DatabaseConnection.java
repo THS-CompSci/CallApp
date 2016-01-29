@@ -22,9 +22,9 @@ public class DatabaseConnection extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE reminders(_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, date TEXT, description TEXT, location TEXT, alarm_name TEXT, active INTEGER, user_id INTEGER );");
         db.execSQL("CREATE TABLE messages(_id INTEGER PRIMARY KEY AUTOINCREMENT, sender TEXT, reciever TEXT, message TEXT, send_time TEXT, recieve_time TEXT, read_time TEXT,  );");
     }
-        //This is a change
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
 
     }
 }

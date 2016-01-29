@@ -1,10 +1,9 @@
 package jet.callio.com;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Spinner;
 
 
 public class EventCreate extends AppCompatActivity {
@@ -13,14 +12,6 @@ public class EventCreate extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_create);
-    }
-
-    public boolean onClick(Menu menu) {
-        Spinner mySpinner = (Spinner) findViewById(R.id.add_event_spinner);
-        mySpinner.setAdapter(new MySpinnerAdapter());
-        mySpinner.setOnItemSelectedListener(this);
-
-
     }
 
     @Override

@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="io.damen.calendar.event_create">
+
+    <EditText
+        android:id="@+id/add_event_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Title" />
+
+    <EditText
+        android:id="@+id/add_event_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/add_event_title"
+        android:hint="Description" />
+
+    <EditText
+        android:id="@+id/add_event_label"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/add_event_description"
+        android:layout_below="@+id/add_event_description"
+        android:hint="Label" />
+
+    <Spinner
+        android:id="@+id/add_event_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/add_event_label"
+        android:layout_toStartOf="@+id/add_event_label"></Spinner>
+
+    <Button
+        android:id="@+id/add_event_date"
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/add_event_spinner"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/add_event_spinner"
+        android:hint="Date" />
+
+    <Button
+        android:id="@+id/add_event_time"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/add_event_description"
+        android:layout_below="@+id/add_event_spinner"
+        android:hint="Time" />
+
+    <Button
+        android:id="@+id/add_event_create"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:hint="Create" />
+
+</RelativeLayout>
