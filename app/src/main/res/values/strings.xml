@@ -8,6 +8,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="navigation_drawer_open">Settings</string>
     <string name="navigation_drawer_close">Settings</string>
+    <string name="action_settings">Settings</string>
 
 
 </resources>
