@@ -1,4 +1,4 @@
-package jet.callio.com;
+package taylor.calio.com;
 
 
 import android.app.Fragment;
@@ -91,14 +91,14 @@ public class SlideActivity extends AppCompatActivity
         switch (id) {
             case R.id.nav_message:
 
-                ft.replace(R.id.mainFrame, android.support.v4.app.Fragment.instantiate(getApplicationContext(), "jet.callio.com.Message"));
+                ft.replace(R.id.mainFrame, android.support.v4.app.Fragment.instantiate(getApplicationContext(), "taylor.calio.com.Message"));
                 ft.commit();
                 title = "Messages";
                 break;
 
             case R.id.nav_reminders:
 
-                ft.replace(R.id.mainFrame, android.support.v4.app.Fragment.instantiate(getApplicationContext(), "jet.callio.com.Reminder"));
+                ft.replace(R.id.mainFrame, android.support.v4.app.Fragment.instantiate(getApplicationContext(), "taylor.calio.com.Reminder"));
                 ft.commit();
                 title = "Reminders";
                 break;

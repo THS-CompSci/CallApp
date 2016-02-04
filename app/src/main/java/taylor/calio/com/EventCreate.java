@@ -1,4 +1,4 @@
-package jet.callio.com;
+package taylor.calio.com;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
