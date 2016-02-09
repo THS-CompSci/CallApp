@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="taylor.calio.com.DatabaseConnection"
+    tools:context="jet.callio.com.DatabaseConnection"
     tools:showIn="@layout/activity_database_connection">
 
     <TextView
