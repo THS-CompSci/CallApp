@@ -4,6 +4,8 @@ package jet.callio.com;
 import android.app.Activity;
 import android.os.Bundle;
 
+import taylor.calio.com.R;
+
 public class Calendar extends Activity {
 
     protected void onCreate(Bundle savedInstanceState) {

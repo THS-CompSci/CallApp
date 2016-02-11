@@ -42,7 +42,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
      * TODO: remove after connecting to a real authentication system.
      */
     private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "foo@example.com:hello", "bar@example.com:world"
+            "foo@example.com:hello", "bar@example.com:world" , "d@d.com:ddddd"
     };
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
@@ -101,6 +101,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             @Override
             public void onClick(View view) {
                 //go to create screen
+                Intent myIntent = new Intent(LoginActivity.this, CreateLoginActivity.class);
+                LoginActivity.this.startActivity(myIntent);
             }
         });
 
