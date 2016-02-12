@@ -30,7 +30,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import taylor.calio.com.R;
+//import taylor.calio.com.R;
 
 /**
  * A login screen that offers login via email/password.
