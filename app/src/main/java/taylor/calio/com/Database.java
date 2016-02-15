@@ -7,11 +7,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 /**
  * Created by h0607265 on 1/15/2016.
  */
-public class DatabaseConnection extends SQLiteOpenHelper {
+public class Database extends SQLiteOpenHelper {
     public static final String DB_NAME="Calendar";
     public static final int DB_VERSION=1;
 
-    public DatabaseConnection(Context context) {
+    public Database(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
 
