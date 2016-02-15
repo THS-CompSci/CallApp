@@ -27,7 +27,17 @@
             android:name="taylor.calio.com.SlideActivity"
             android:label="@string/app_name"
            >
+
         </activity>
+        <activity
+            android:name="taylor.calio.com.CreateReminder"
+            android:label="Create Reminder">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="taylor.calio.com.SlideActivity" />
+        </activity>
+
+
 
         <activity
             android:label="@string/app_name"

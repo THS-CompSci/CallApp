@@ -11,4 +11,9 @@
     <string name="action_settings">Settings</string>
 
 
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="title_activity_set_date">SetDate</string>
+    <string name="title_activity_create_reminder">CreateReminder</string>
+    <string name="title_activity_set_time">SetTime</string>
 </resources>

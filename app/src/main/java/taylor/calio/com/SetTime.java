@@ -2,24 +2,30 @@ package taylor.calio.com;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import taylor.calio.com.R;
 
 
-public class EventCreate extends AppCompatActivity {
+public class SetTime extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_event_create);
+        setContentView(R.layout.activity_set_time);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_event_create, menu);
+        getMenuInflater().inflate(R.menu.menu_set_time, menu);
         return true;
     }
 
@@ -31,7 +37,7 @@ public class EventCreate extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.done) {
             return true;
         }
 
