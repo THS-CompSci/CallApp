@@ -40,7 +40,8 @@
                 android:textStyle="bold"
                 android:minHeight="100dp"
                 android:textSize="42sp"
-                android:minWidth="200dp" />
+                android:minWidth="200dp"
+                android:onClick="signIn" />
 
             <Button android:id="@+id/recovery_sign_in_button" style="?android:textAppearanceSmall"
                 android:layout_width="wrap_content" android:layout_height="wrap_content"
