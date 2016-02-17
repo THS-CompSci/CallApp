@@ -1,5 +1,6 @@
 package taylor.calio.com;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -21,6 +22,11 @@ public class Database extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE events(_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, start_date TEXT, end_date TEXT, description TEXT, event_type TEXT, notification_buffer TEXT, user_id INTEGER, sharing_id INTEGER);");
         db.execSQL("CREATE TABLE reminders(_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, date TEXT, description TEXT, location TEXT, alarm_name TEXT, active INTEGER, user_id INTEGER );");
         db.execSQL("CREATE TABLE messages(_id INTEGER PRIMARY KEY AUTOINCREMENT, sender TEXT, reciever TEXT, message TEXT, send_time TEXT, recieve_time TEXT, read_time TEXT);");
+        ContentValues values = new ContentValues();
+        values.put("username","Damen");
+        values.put("email", "damen@damenhannah.com");
+        values.put("password","123456789");
+        db.insert("users",null,values);
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

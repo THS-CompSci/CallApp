@@ -44,14 +44,17 @@ public class LoginActivity extends Activity {
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
         if(this.isEmailValid(email)&&this.isPasswordValid(password)) {
-            Cursor c = data.query("users",new String[]{"_id","email","first_name"},"email = ? and password = ?",new String[]{email,password},null,null,null,null);
+            Cursor c = data.query("users",new String[]{"email","first_name"},"email = ? and password = ?",new String[]{email,password},null,null,null,null);
             if(c.getCount()==1){
                 showProgress(true);
             }else{
-                Toast toast = Toast.makeText(getApplicationContext(), "You got it wrong, idiot", 4000);
+                Toast toast = Toast.makeText(getApplicationContext(), "You got it wrong", 4000);
                 toast.show();
             }
 
+        }else{
+            Toast toast = Toast.makeText(getApplicationContext(), "Please enter a valid email and password", 4000);
+            toast.show();
         }
 
     }
