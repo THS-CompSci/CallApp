@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import android.app.LoaderManager;
+import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -24,7 +25,9 @@ public class LoginActivity extends Activity {
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
-
+    private Cursor c;
+    private SQLiteOpenHelper db;
+    private SQLiteDatabase data;
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
@@ -39,14 +42,18 @@ public class LoginActivity extends Activity {
         attemptLogin();
     }
     public void attemptLogin(){
-        SQLiteOpenHelper db = new Database(this);
-        SQLiteDatabase data = db.getReadableDatabase();
+        db = new Database(this);
+        data = db.getReadableDatabase();
+
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
         if(this.isEmailValid(email)&&this.isPasswordValid(password)) {
-            Cursor c = data.query("users",new String[]{"email","first_name"},"email = ? and password = ?",new String[]{email,password},null,null,null,null);
+            c = data.query("users",new String[]{"email","username"},"email = ? and password = ?",new String[]{email,password},null,null,null,null);
+            Log.e("USER:", " "+c.getCount());
             if(c.getCount()==1){
-                showProgress(true);
+                Intent intent = new Intent(this, CalendarActivity.class);
+                //intent.putExtra("username",c.getString(0));
+                startActivity(intent);
             }else{
                 Toast toast = Toast.makeText(getApplicationContext(), "You got it wrong", 4000);
                 toast.show();
@@ -66,30 +73,8 @@ public class LoginActivity extends Activity {
         return password.length() > 8;
     }
 
-    public void showProgress(final boolean show) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
-            int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
-
-            mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
-            mLoginFormView.animate().setDuration(shortAnimTime).alpha(
-                    show ? 0 : 1).setListener(new AnimatorListenerAdapter() {
-                @Override
-                public void onAnimationEnd(Animator animation) {
-                    mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
-                }
-            });
-
-            mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
-            mProgressView.animate().setDuration(shortAnimTime).alpha(
-                    show ? 1 : 0).setListener(new AnimatorListenerAdapter() {
-                @Override
-                public void onAnimationEnd(Animator animation) {
-                    mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
-                }
-            });
-        } else {
-            mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
-            mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
-        }
+    public void onDestroy(){
+        c.close();
+        data.close();
     }
 }
