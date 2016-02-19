@@ -1,19 +1,29 @@
 package taylor.calio.com;
 
-import android.app.Activity;
+
+import android.app.Fragment;
 import android.os.Bundle;
-import android.widget.AutoCompleteTextView;
-import android.widget.EditText;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
-/**
- * Created by h0607265 on 2/18/2016.
- */
-public class CalendarActivity extends Activity {
-    protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+import taylor.calio.com.R;
+
+public class CalendarActivity extends Fragment {
 
 
+    public CalendarActivity() {
+        // Required empty public constructor
+    }
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.cal_fragment, container, false);
 
     }
+
+
 }

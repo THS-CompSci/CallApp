@@ -51,7 +51,7 @@ public class LoginActivity extends Activity {
             c = data.query("users",new String[]{"_id"},"email = ? and password = ?",new String[]{email,password},null,null,null,null);
 
             if(c.getCount()==1){
-                Intent intent = new Intent(this, CalendarActivity.class);
+                Intent intent = new Intent(this, SlideActivity.class);
                 //intent.putExtra("username",c.getString(0));
                 startActivity(intent);
             }else{

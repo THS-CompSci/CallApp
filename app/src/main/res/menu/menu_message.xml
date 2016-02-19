@@ -8,8 +8,9 @@
         android:title="@string/action_settings"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_barsearch"
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_action_action_search"
         android:orderInCategory="100"
-        android:title="Search"
-        app:showAsAction="ifRoom" />
+        android:title="@string/abc_search_hint"
+        app:showAsAction="always" />
 </menu>

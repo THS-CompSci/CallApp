@@ -1,6 +1,5 @@
 package taylor.calio.com;
 
-
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -18,7 +17,7 @@ import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 
 import java.util.Calendar;
 
-public class CreateReminder extends AppCompatActivity implements
+public class PickerDialog extends AppCompatActivity implements
         TimePickerDialog.OnTimeSetListener,
         DatePickerDialog.OnDateSetListener
 {
@@ -44,7 +43,7 @@ public class CreateReminder extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_event_create);
+        setContentView(R.layout.picker_dialog);
 
         // Find our View instances
         timeTextView = (TextView)findViewById(R.id.time_textview);
@@ -78,7 +77,7 @@ public class CreateReminder extends AppCompatActivity implements
             public void onClick(View v) {
                 Calendar now = Calendar.getInstance();
                 TimePickerDialog tpd = TimePickerDialog.newInstance(
-                        CreateReminder.this,
+                        PickerDialog.this,
                         now.get(Calendar.HOUR_OF_DAY),
                         now.get(Calendar.MINUTE),
                         mode24Hours.isChecked()
@@ -112,7 +111,7 @@ public class CreateReminder extends AppCompatActivity implements
             public void onClick(View v) {
                 Calendar now = Calendar.getInstance();
                 DatePickerDialog dpd = DatePickerDialog.newInstance(
-                        CreateReminder.this,
+                        PickerDialog.this,
                         now.get(Calendar.YEAR),
                         now.get(Calendar.MONTH),
                         now.get(Calendar.DAY_OF_MONTH)

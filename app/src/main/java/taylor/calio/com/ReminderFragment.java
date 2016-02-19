@@ -4,7 +4,6 @@ package taylor.calio.com;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -12,19 +11,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import taylor.calio.com.R;
-
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Reminders extends Fragment {
+public class ReminderFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
-    public Reminders() {
+    public ReminderFragment() {
         // Required empty public constructor
     }
 
@@ -47,7 +44,7 @@ public class Reminders extends Fragment {
         // specify an adapter (see also next example)
         String[] myDataset = new String[2];
 
-        mAdapter = new MyAdapter(myDataset);
+        mAdapter = new Adapter(myDataset);
         mRecyclerView.setAdapter(mAdapter);
         // Inflate the layout for this fragment
 
