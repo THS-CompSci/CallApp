@@ -70,7 +70,7 @@ public class LoginActivity extends Activity {
     }
 
     private boolean isPasswordValid(String password) {
-        return password.length() > 4;
+        return true;
     }
 
     public void onDestroy(){
