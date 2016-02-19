@@ -48,11 +48,11 @@ public class LoginActivity extends Activity {
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
         if(this.isEmailValid(email)&&this.isPasswordValid(password)) {
-            c = data.query("users",new String[]{"email","username"},"email = ? and password = ?",new String[]{email,password},null,null,null,null);
-            Log.e("USER:", " "+c.getCount());
+            c = data.query("users",new String[]{"_id"},"email = ? and password = ?",new String[]{email,password},null,null,null,null);
+
             if(c.getCount()==1){
                 Intent intent = new Intent(this, CalendarActivity.class);
-                //intent.putExtra("username",c.getString(0));
+                intent.putExtra("username",c.getString(0));
                 startActivity(intent);
             }else{
                 Toast toast = Toast.makeText(getApplicationContext(), "You got it wrong", 4000);
