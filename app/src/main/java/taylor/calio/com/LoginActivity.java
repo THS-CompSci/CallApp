@@ -52,7 +52,7 @@ public class LoginActivity extends Activity {
 
             if(c.getCount()==1){
                 Intent intent = new Intent(this, CalendarActivity.class);
-                intent.putExtra("username",c.getString(0));
+                //intent.putExtra("username",c.getString(0));
                 startActivity(intent);
             }else{
                 Toast toast = Toast.makeText(getApplicationContext(), "You got it wrong", 4000);
