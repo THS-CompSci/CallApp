@@ -26,8 +26,8 @@ public class Database extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE messages(_id INTEGER PRIMARY KEY AUTOINCREMENT, sender TEXT, reciever TEXT, message TEXT, send_time TEXT, recieve_time TEXT, read_time TEXT);");
         ContentValues values = new ContentValues();
         values.put("username","Damen");
-        values.put("email", "damen@damenhannah.com");
-        values.put("password","123456789");
+        values.put("email", "d@");
+        values.put("password","1234");
         db.insert("users", null, values);
         Log.e("USER:", db.query("users", new String[]{"email"}, "email = ?", new String[]{"damen@damenhannah.com"}, null, null, null).toString());
     }
