@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import taylor.calio.com.R;
 
 public class CalendarActivity extends Fragment {
 

@@ -57,29 +57,18 @@ public class SlideActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        /*
-        Assigning view variables to thier respective view in xml
-        by findViewByID method
-         */
+
 
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
 
-        /*
-        Creating Adapter and setting that adapter to the viewPager
-        setSupportActionBar method takes the toolbar and sets it as
-        the default action bar thus making the toolbar work like a normal
-        action bar.
-         */
+
         viewPagerAdapter = new ViewPageAdapter(getSupportFragmentManager());
         viewPager.setAdapter(viewPagerAdapter);
 
 
-        /*
-        TabLayout.newTab() method creates a tab view, Now a Tab view is not the view
-        which is below the tabs, its the tab itself.
-         */
+
 
         final TabLayout.Tab day = tabLayout.newTab();
         final TabLayout.Tab week = tabLayout.newTab();
@@ -91,32 +80,17 @@ public class SlideActivity extends AppCompatActivity
         week.setText("Week");
         month.setText("Month");
 
-        /*
-        Adding the tab view to our tablayout at appropriate positions
-        As I want day at first position I am passing day and 0 as argument to
-        the tablayout and like wise for other tabs as well
-         */
+
         tabLayout.addTab(day, 0);
         tabLayout.addTab(week, 1);
         tabLayout.addTab(month, 2);
 
-        /*
-        TabTextColor sets the color for the title of the tabs, passing a ColorStateList here makes
-        tab change colors in different situations such as selected, active, inactive etc
 
-        TabIndicatorColor sets the color for the indiactor below the tabs
-         */
 
 
         tabLayout.setSelectedTabIndicatorColor(ContextCompat.getColor(this, R.color.indicator));
 
-        /*
-        Adding a onPageChangeListener to the viewPager
-        1st we add the PageChangeListener and pass a TabLayoutPageChangeListener so that Tabs Selection
-        changes when a viewpager page changes.
 
-        2nd We add the onPageChangeListener to change the icon when the page changes in the view Pager
-         */
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -243,7 +217,6 @@ public class SlideActivity extends AppCompatActivity
 
             case R.id.nav_message:
                 Fragment fragMes = new MessageActivity();
-                // update the main content by replacing fragments
                 fragmentManager.beginTransaction()
                         .replace(R.id.mainFrame, fragMes)
                         .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
