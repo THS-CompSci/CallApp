@@ -53,7 +53,7 @@ public class ReminderFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(),CreateReminder.class);
+                Intent intent = new Intent(getContext(),PickerDialog.class);
                 startActivity(intent);
             }
         });
