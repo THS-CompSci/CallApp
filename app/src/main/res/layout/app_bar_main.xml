@@ -43,7 +43,7 @@
                 app:floatingSearch_dismissOnOutsideTouch="true"
                 app:floatingSearch_leftActionMode="showHamburger"
                 app:floatingSearch_menu="@menu/main"
-                android:background="colorPrimary" />
+                android:background="@color/colorPrimary" />
 
         </FrameLayout>
 

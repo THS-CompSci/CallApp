@@ -16,12 +16,13 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginActivity extends Activity {
-    private AutoCompleteTextView mEmailView;
+    private TextView mEmailView;
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
@@ -32,9 +33,17 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
+        mEmailView = (TextView) findViewById(R.id.input_email);
 
-        mPasswordView = (EditText) findViewById(R.id.password);
+        mPasswordView = (EditText) findViewById(R.id.input_password);
+
+        Button mEmailSignInButton = (Button) findViewById(R.id.btn_login);
+        mEmailSignInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                attemptLogin();
+            }
+        });
 
 
     }
@@ -49,18 +58,21 @@ public class LoginActivity extends Activity {
         String password = mPasswordView.getText().toString();
         if(this.isEmailValid(email)&&this.isPasswordValid(password)) {
             c = data.query("users",new String[]{"_id"},"email = ? and password = ?",new String[]{email,password},null,null,null,null);
-
+            Log.e("CCCCCCCCOOOOOOOOOOOOO",""+ c.getCount());
             if(c.getCount()==1){
                 Intent intent = new Intent(this, SlideActivity.class);
                 //intent.putExtra("username",c.getString(0));
-                startActivity(intent);
+                LoginActivity.this.startActivity(intent);
+//                Toast toast = Toast.makeText(getApplicationContext(), "You got it right", Toast.LENGTH_LONG);
+                //toast.show();
+
             }else{
-                Toast toast = Toast.makeText(getApplicationContext(), "You got it wrong", 4000);
+                Toast toast = Toast.makeText(getApplicationContext(), "You got it wrong", Toast.LENGTH_LONG);
                 toast.show();
             }
 
         }else{
-            Toast toast = Toast.makeText(getApplicationContext(), "Please enter a valid email and password", 4000);
+            Toast toast = Toast.makeText(getApplicationContext(), "Please enter a valid email and password", Toast.LENGTH_LONG);
             toast.show();
         }
 
@@ -74,6 +86,7 @@ public class LoginActivity extends Activity {
     }
 
     public void onDestroy(){
+        super.onDestroy();
         c.close();
         data.close();
     }
