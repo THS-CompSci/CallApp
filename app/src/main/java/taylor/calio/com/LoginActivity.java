@@ -11,6 +11,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -36,6 +37,7 @@ public class LoginActivity extends Activity {
         mEmailView = (TextView) findViewById(R.id.input_email);
 
         mPasswordView = (EditText) findViewById(R.id.input_password);
+
 
         Button mEmailSignInButton = (Button) findViewById(R.id.btn_login);
         mEmailSignInButton.setOnClickListener(new View.OnClickListener() {

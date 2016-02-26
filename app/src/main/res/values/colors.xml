@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#1976D2</color>
     <color name="colorAccent">#CDDC39</color>
     <color name="indicator">#ecd95a</color>
+    <color name="transparent">#00a3da</color>
+    <color name="colorBackground">#ffffff</color>
+    <color name="secondary_text_default_material_dark">#ffffff</color>
+    <color name="background_material_light">#ffffff</color>
 </resources>
