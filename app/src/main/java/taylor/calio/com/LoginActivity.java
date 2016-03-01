@@ -25,6 +25,7 @@ import android.widget.Toast;
 public class LoginActivity extends Activity {
     private TextView mEmailView;
     private EditText mPasswordView;
+    private TextView mCreateloginView;
     private View mProgressView;
     private View mLoginFormView;
     private Cursor c;
@@ -47,6 +48,13 @@ public class LoginActivity extends Activity {
             }
         });
 
+        mCreateloginView =  (TextView) findViewById(R.id.link_signup);
+        mCreateloginView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                createLogin();
+            }
+        });
 
     }
     public void signIn(View v){
@@ -91,5 +99,10 @@ public class LoginActivity extends Activity {
         super.onDestroy();
         c.close();
         data.close();
+    }
+
+    private void createLogin(){
+        Intent intent = new Intent(this, CreateLoginActivity.class);
+        LoginActivity.this.startActivity(intent);
     }
 }
