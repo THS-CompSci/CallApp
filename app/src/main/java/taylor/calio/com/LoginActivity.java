@@ -25,13 +25,16 @@ import android.widget.Toast;
 public class LoginActivity extends Activity {
     private TextView mEmailView;
     private EditText mPasswordView;
-    private TextView mCreateloginView;
     private View mProgressView;
     private View mLoginFormView;
     private Cursor c;
     private SQLiteOpenHelper db;
     private SQLiteDatabase data;
     protected void onCreate(Bundle savedInstanceState){
+
+        TextView mCreateloginView;
+        TextView mRecoverloginView;
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
@@ -45,6 +48,14 @@ public class LoginActivity extends Activity {
             @Override
             public void onClick(View view) {
                 attemptLogin();
+            }
+        });
+
+        mRecoverloginView =  (TextView) findViewById(R.id.forgot_login_link);
+        mRecoverloginView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                recoverLogin();
             }
         });
 
@@ -103,6 +114,11 @@ public class LoginActivity extends Activity {
 
     private void createLogin(){
         Intent intent = new Intent(this, CreateLoginActivity.class);
+        LoginActivity.this.startActivity(intent);
+    }
+
+    private void recoverLogin(){
+        Intent intent = new Intent(this, RecoverLoginActivity.class);
         LoginActivity.this.startActivity(intent);
     }
 }

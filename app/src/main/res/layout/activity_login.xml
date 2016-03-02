@@ -70,7 +70,7 @@
 
 
     <ScrollView android:fitsSystemWindows="true" android:layout_height="fill_parent" android:layout_width="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#00bfff" android:id="@+id/login_form">
+    android:background="@color/colorPrimary" android:id="@+id/login_form">
     <LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingRight="24dp" android:paddingLeft="24dp" android:paddingTop="56dp" android:orientation="vertical">
         <ImageView android:layout_height="72dp" android:layout_width="wrap_content" android:layout_gravity="center_horizontal" android:layout_marginBottom="24dp" android:src="@drawable/logo"/>
 
