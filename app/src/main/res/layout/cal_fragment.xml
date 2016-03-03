@@ -8,6 +8,26 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/app_bar_main">
 
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/app_bar_main"/>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:layout_below="@+id/tool_bar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tabs"
+        />
+
     <FrameLayout
         android:id="@+id/mainFrame"
         android:layout_width="match_parent"
@@ -20,10 +40,6 @@
             android:layout_height="match_parent"
             tools:context=".MainActivity"
             tools:showIn="@layout/app_bar_main">
-
-            <include
-                android:id="@+id/tool_bar"
-                layout="@layout/app_bar_main"/>
 
 
 

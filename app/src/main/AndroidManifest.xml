@@ -15,6 +15,7 @@
         <activity
             android:name="taylor.calio.com.LoginActivity"
             android:label="@string/app_name"
+            android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustResize|stateVisible">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

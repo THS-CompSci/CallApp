@@ -1,13 +1,13 @@
 package taylor.calio.com;
 
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import taylor.calio.com.R;
+
 
 public class MessageActivity extends Fragment {
 
@@ -16,7 +16,6 @@ public class MessageActivity extends Fragment {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -24,6 +23,7 @@ public class MessageActivity extends Fragment {
         return inflater.inflate(R.layout.fragment_message, container, false);
 
     }
+
 
 
 }
