@@ -31,6 +31,10 @@ public class LoginActivity extends Activity {
     private SQLiteOpenHelper db;
     private SQLiteDatabase data;
     protected void onCreate(Bundle savedInstanceState){
+
+        TextView mCreateloginView;
+        TextView mRecoverloginView;
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
@@ -47,6 +51,21 @@ public class LoginActivity extends Activity {
             }
         });
 
+        mRecoverloginView =  (TextView) findViewById(R.id.forgot_login_link);
+        mRecoverloginView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                recoverLogin();
+            }
+        });
+
+        mCreateloginView =  (TextView) findViewById(R.id.link_signup);
+        mCreateloginView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                createLogin();
+            }
+        });
 
     }
     public void signIn(View v){
@@ -91,5 +110,15 @@ public class LoginActivity extends Activity {
         super.onDestroy();
         c.close();
         data.close();
+    }
+
+    private void createLogin(){
+        Intent intent = new Intent(this, CreateLoginActivity.class);
+        LoginActivity.this.startActivity(intent);
+    }
+
+    private void recoverLogin(){
+        Intent intent = new Intent(this, RecoverLoginActivity.class);
+        LoginActivity.this.startActivity(intent);
     }
 }

@@ -26,23 +26,6 @@ public class RecoverLoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recover_login);
 
-        mEmailView = (EditText) findViewById(R.id.email);
-
-        Button mRecoveryButton = (Button) findViewById(R.id.Recover_login);
-        mRecoveryButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                email = mEmailView.getText().toString();
-                if (email.contains("@") && email.length() > 1){
-                    sendEmail();
-                }
-                else{
-                    mEmailView.setText("");
-                    Toast.makeText(RecoverLoginActivity.this,
-                            "TYPE A REAL EMAIL U DUM DUM", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
     }
 
 
