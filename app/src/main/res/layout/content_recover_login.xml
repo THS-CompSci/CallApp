@@ -25,14 +25,28 @@
             android:editable="false" />
 
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Security Question"
+            android:id="@+id/securityText"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffffff" />
+
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/spinner_question"
             android:layout_gravity="center_horizontal"
+
+            android:entries="@array/loginQuestions"
             android:backgroundTint="#ffffff"
             android:dropDownSelector="#ffffff"
-            android:foregroundTint="#ffffff" />
+            android:foregroundTint="#ffffff"
+            android:spinnerMode="dropdown"
+            android:foreground="#ffffff"
+            android:minHeight="50dp" />
 
         <EditText android:layout_height="wrap_content"
             android:layout_width="match_parent"
