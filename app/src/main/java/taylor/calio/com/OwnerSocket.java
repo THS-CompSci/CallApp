@@ -14,6 +14,7 @@ public class OwnerSocket extends Thread {
 
 
     public OwnerSocket(Handler handler) throws IOException {
+
         try {
             socket = new ServerSocket(1234);
             this.handler = handler;

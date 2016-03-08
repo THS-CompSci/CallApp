@@ -123,7 +123,7 @@ public class SlideActivity extends AppCompatActivity {
                     break;
                 case R.id.nav_message:
                     mNavigationView.setCheckedItem(R.id.nav_message);
-                    ft.replace(R.id.mainFrame, Fragment.instantiate(getApplicationContext(), "taylor.calio.com.MessageActivity"));
+                    ft.replace(R.id.mainFrame, Fragment.instantiate(getApplicationContext(), "taylor.calio.com.wififragment"));
                     ft.commit();
                     title = "CalIO - Messages";
                     break;
