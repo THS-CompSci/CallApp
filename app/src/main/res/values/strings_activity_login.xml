@@ -15,6 +15,7 @@
     <string name="error_field_required">This field is required</string>
 
     <string-array name="loginQuestions">
+        <item>Select a Security question.</item>
         <item>What is your first pets name</item>
         <item>Who is your mommy</item>
         <item>Who is your Daddy</item>
