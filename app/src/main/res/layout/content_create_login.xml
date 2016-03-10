@@ -106,6 +106,16 @@
                     android:foreground="#ffffff"
                     android:minHeight="50dp" />
 
+        <EditText
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="Answer"
+            android:inputType="textPassword"
+            android:id="@+id/input_answerQuestion"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            android:backgroundTint="#ffffff" />
+
 
         <android.support.v7.widget.AppCompatButton
             android:layout_height="wrap_content"
