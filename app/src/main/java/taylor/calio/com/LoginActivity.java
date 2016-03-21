@@ -74,6 +74,7 @@ public class LoginActivity extends Activity {
     public void signIn(View v){
         attemptLogin();
     }
+
     public void attemptLogin(){
         db = new Database(this);
         data = db.getReadableDatabase();
