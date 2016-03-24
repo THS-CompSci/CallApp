@@ -1,18 +1,27 @@
 package taylor.calio.com;
 
-import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
 
-import br.com.customsearchable.contract.CustomSearchableConstants;
-import br.com.customsearchable.model.ResultItem;
+public class SearchActivity extends AppCompatActivity {
 
-/**
- * Created by Yasser on 2/1/2016.
- */
-public class SearchActivity extends Activity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.search);
+        TextView txt = (TextView)findViewById(R.id.textView);
 
+        Intent intent = getIntent();
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            txt.setText("Searching by: "+ query);
+
+        } else if (Intent.ACTION_VIEW.equals(intent.getAction())) {
+            String uri = intent.getDataString();
+            txt.setText("Suggestion: "+ uri);
+        }
+    }
 }
-
-

@@ -2,7 +2,10 @@ package taylor.calio.com;
 
 
 import android.app.FragmentManager;
+import android.app.SearchManager;
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.design.widget.FloatingActionButton;
@@ -12,6 +15,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -24,7 +28,7 @@ import android.view.View;
 import android.widget.Toast;
 
 
-public class SlideActivity extends AppCompatActivity {
+public class SlideActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
     private DrawerLayout drawer;
     ActionBarDrawerToggle mDrawerToggle;
@@ -48,8 +52,6 @@ public class SlideActivity extends AppCompatActivity {
         mtoolbar.setTitle("CalIO");
         setSupportActionBar(mtoolbar);
 
-
-
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerToggle = new ActionBarDrawerToggle(
                 this, drawer, mtoolbar,
@@ -65,22 +67,51 @@ public class SlideActivity extends AppCompatActivity {
         ft.replace(R.id.fragment_layout, Fragment.instantiate(getApplicationContext(), "taylor.calio.com.CalFrag"));
         ft.commit();
 
-        mtoolbar = (Toolbar) findViewById(R.id.tool_bar);
-
-
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
 
-        MenuItem item = menu.findItem(R.id.action_search);
+        MenuItem searchItem = menu.findItem(R.id.search);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+        searchView.setOnQueryTextListener(this);
+
+        searchView.setIconifiedByDefault(true);
+
 
         return true;
 
     }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            Toast.makeText(this, "Searching by: "+ query, Toast.LENGTH_SHORT).show();
+
+        } else if (Intent.ACTION_VIEW.equals(intent.getAction())) {
+            String uri = intent.getDataString();
+            Toast.makeText(this, "Suggestion: "+ uri, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        // User pressed the search button
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        // User changed the text
+        return false;
+    }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -123,7 +154,7 @@ public class SlideActivity extends AppCompatActivity {
                     break;
                 case R.id.nav_message:
                     mNavigationView.setCheckedItem(R.id.nav_message);
-                    ft.replace(R.id.mainFrame, Fragment.instantiate(getApplicationContext(), "taylor.calio.com.MessageActivity"));
+                    ft.replace(R.id.mainFrame, Fragment.instantiate(getApplicationContext(), "taylor.calio.com.wififragment"));
                     ft.commit();
                     title = "CalIO - Messages";
                     break;
